@@ -1,20 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ThinkHighly Apps Website
 
-## Getting Started
+A modern, professional website for ThinkHighly Apps - a South African tech startup specializing in mobile apps, websites, and digital solutions.
 
-First, run the development server:
+## 🚀 Features
+
+- **Modern Design**: Feminine but professional with soft purple/pink gradients
+- **Responsive**: Mobile-first design that works on all devices
+- **Animations**: Smooth scroll animations using Framer Motion
+- **SEO Ready**: Proper page structure and metadata
+- **Tender Ready**: Company profile and capability statement pages for government/corporate procurement
+
+## 📱 Pages
+
+### Core Pages
+- **Home** (`/`) - Hero section, services preview, portfolio showcase, testimonials
+- **About** (`/about`) - Company story, mission, vision, values
+- **Services** (`/services`) - Detailed service descriptions with technologies and benefits
+- **Portfolio** (`/portfolio`) - Project showcase with filtering and statistics
+- **Contact** (`/contact`) - Contact form, multiple contact methods, FAQ
+
+### Tender Credibility Pages
+- **Company Profile** (`/company-profile`) - Professional company overview with certifications
+- **Capability Statement** (`/capability-statement`) - Government/corporate procurement ready
+
+## 🛠 Technology Stack
+
+- **Frontend**: React 18, Next.js 14, TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: Vercel/Netlify ready
+
+## 🎨 Design System
+
+### Colors
+- **Primary**: Purple gradient (`from-purple-600 to-pink-600`)
+- **Secondary**: Soft purple/pink gradients
+- **Text**: Gray scale with white overlays
+- **Background**: White with purple/pink accents
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone <repository-url>
+cd thinkhighly-apps
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # Next.js app router
+│   ├── about/             # About page
+│   ├── capability-statement/ # Capability statement page
+│   ├── company-profile/     # Company profile page
+│   ├── contact/            # Contact page
+│   ├── portfolio/          # Portfolio page
+│   ├── services/           # Services page
+│   ├── layout.tsx          # Root layout
+│   └── page.tsx           # Home page
+├── components/
+│   ├── layout/            # Layout components
+│   │   ├── Navbar.tsx
+│   │   └── Footer.tsx
+│   └── sections/          # Page sections
+│       ├── CTASection.tsx
+│       ├── HeroSection.tsx
+│       ├── PortfolioShowcase.tsx
+│       ├── ServicesPreview.tsx
+│       ├── Testimonials.tsx
+│       └── WhyChooseUs.tsx
+└── styles/               # Global styles
+    └── globals.css
+```
+
+## 🎯 Key Features
+
+### Navigation
+- Sticky navbar with scroll effects
+- Mobile responsive menu
+- Smooth scroll navigation
+- Active page indicators
+
+### Contact & Forms
+- Working contact form with validation
+- Multiple contact methods (email, phone, WhatsApp)
+- Form state management
+- Success feedback
+
+### Animations
+- Scroll-triggered animations
+- Hover effects and transitions
+- Loading states
+- Micro-interactions
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel --prod
+```
+
+### Netlify
+```bash
+# Build and deploy
+npm run build
+# Upload dist/ folder to Netlify
+```
+
+## 📞 Support
+
+For support or questions:
+- **Email**: info@thinkhighlyapps.co.za
+- **Phone**: +27 12 345 6789
+- **Website**: thinkhighlyapps.co.za
+
+---
+
+**ThinkHighly Apps** - Think Highly. Build Smarter. 🚀
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
