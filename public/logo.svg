@@ -1,8 +1,21 @@
 <svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Logo Icon -->
   <g id="logo-icon">
-    <!-- Dark purple square background -->
-    <rect x="0" y="8" width="24" height="24" rx="4" fill="#4C1D95"/>
+    <!-- Dark purple square background with subtle shadow for visibility -->
+    <defs>
+      <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+        <feOffset dx="0" dy="2" result="offsetblur"/>
+        <feFlood flood-color="#000000" flood-opacity="0.3"/>
+        <feComposite in2="offsetblur" operator="in"/>
+        <feMerge>
+          <feMergeNode in="SourceGraphic"/>
+          <feMergeNode in="Shadow"/>
+        </feMerge>
+      </filter>
+    </defs>
+    
+    <rect x="0" y="8" width="24" height="24" rx="4" fill="#4C1D95" filter="url(#shadow)"/>
     
     <!-- Four vertical bars of increasing height -->
     <rect x="6" y="14" width="3" height="6" fill="#A78BFA"/>
@@ -18,20 +31,20 @@
   <!-- Company Name -->
   <g id="company-text">
     <!-- "think" in darker purple -->
-    <text x="32" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#4C1D95">
+    <text x="36" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#4C1D95">
       think
     </text>
     
     <!-- "highly apps" in brighter purple -->
-    <text x="68" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#7C3AED">
+    <text x="72" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#7C3AED">
       highly apps
     </text>
     
     <!-- Underline -->
-    <line x1="32" y1="24" x2="158" y2="24" stroke="#A78BFA" stroke-width="1"/>
+    <line x1="36" y1="24" x2="162" y2="24" stroke="#A78BFA" stroke-width="1"/>
     
     <!-- Tagline "BUILD SMARTER" -->
-    <text x="32" y="32" font-family="Inter, sans-serif" font-size="7" font-weight="500" fill="#A78BFA" letter-spacing="1">
+    <text x="36" y="32" font-family="Inter, sans-serif" font-size="7" font-weight="500" fill="#A78BFA" letter-spacing="1">
       BUILD SMARTER
     </text>
   </g>
