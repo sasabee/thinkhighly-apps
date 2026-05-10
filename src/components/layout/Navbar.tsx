@@ -33,7 +33,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3">
               <img 
-                src="/logo-gate.svg" 
+                src="/logo.svg" 
                 alt="ThinkHighly Apps Logo" 
                 className="h-12 w-auto object-contain"
               />
