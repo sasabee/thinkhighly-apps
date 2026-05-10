@@ -33,7 +33,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3">
               <img 
-                src="/logo.svg" 
+                src={isScrolled ? "/logo.svg" : "/logo-white.svg"} 
                 alt="ThinkHighly Apps Logo" 
                 className="h-8 w-auto object-contain"
               />
