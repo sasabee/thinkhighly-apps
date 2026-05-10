@@ -1,13 +1,26 @@
 <svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Logo Icon -->
   <g id="logo-icon">
-    <!-- White square background for dark backgrounds -->
-    <rect x="0" y="8" width="24" height="24" rx="4" fill="#FFFFFF" stroke="#4C1D95" stroke-width="1"/>
+    <!-- Dark purple square background with subtle shadow for visibility -->
+    <defs>
+      <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+        <feOffset dx="0" dy="2" result="offsetblur"/>
+        <feFlood flood-color="#000000" flood-opacity="0.3"/>
+        <feComposite in2="offsetblur" operator="in"/>
+        <feMerge>
+          <feMergeNode in="SourceGraphic"/>
+          <feMergeNode in="Shadow"/>
+        </feMerge>
+      </filter>
+    </defs>
+    
+    <rect x="0" y="8" width="24" height="24" rx="4" fill="#4C1D95" filter="url(#shadow)"/>
     
     <!-- Four vertical bars of increasing height -->
-    <rect x="6" y="14" width="3" height="6" fill="#4C1D95"/>
-    <rect x="10" y="12" width="3" height="8" fill="#7C3AED"/>
-    <rect x="14" y="10" width="3" height="10" fill="#A78BFA"/>
+    <rect x="6" y="14" width="3" height="6" fill="#A78BFA"/>
+    <rect x="10" y="12" width="3" height="8" fill="#C084FC"/>
+    <rect x="14" y="10" width="3" height="10" fill="#E879F9"/>
     
     <!-- Three small light purple circles above bars -->
     <circle cx="7.5" cy="12" r="1.5" fill="#DDD6FE"/>
@@ -18,12 +31,12 @@
   <!-- Company Name -->
   <g id="company-text">
     <!-- "think" in darker purple -->
-    <text x="32" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">
+    <text x="32" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#4C1D95">
       think
     </text>
     
     <!-- "highly apps" in brighter purple -->
-    <text x="68" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#E879F9">
+    <text x="68" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#7C3AED">
       highly apps
     </text>
     
