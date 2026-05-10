@@ -35,7 +35,7 @@ export default function Navbar() {
               <img 
                 src="/logo.svg" 
                 alt="ThinkHighly Apps Logo" 
-                className="h-10 w-auto"
+                className="h-8 w-auto object-contain"
               />
             </Link>
           </div>

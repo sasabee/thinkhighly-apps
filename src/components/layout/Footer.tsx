@@ -11,7 +11,7 @@ export default function Footer() {
               <img 
                 src="/logo.svg" 
                 alt="ThinkHighly Apps Logo" 
-                className="h-8 w-auto"
+                className="h-8 w-auto object-contain"
               />
             </div>
             <p className="text-gray-400 mb-4 max-w-md">

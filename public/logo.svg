@@ -18,20 +18,20 @@
   <!-- Company Name -->
   <g id="company-text">
     <!-- "think" in darker purple -->
-    <text x="32" y="24" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#4C1D95">
+    <text x="32" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#4C1D95">
       think
     </text>
     
     <!-- "highly apps" in brighter purple -->
-    <text x="68" y="24" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#7C3AED">
+    <text x="68" y="20" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#7C3AED">
       highly apps
     </text>
     
     <!-- Underline -->
-    <line x1="32" y1="28" x2="158" y2="28" stroke="#A78BFA" stroke-width="1"/>
+    <line x1="32" y1="24" x2="158" y2="24" stroke="#A78BFA" stroke-width="1"/>
     
     <!-- Tagline "BUILD SMARTER" -->
-    <text x="32" y="36" font-family="Inter, sans-serif" font-size="8" font-weight="500" fill="#A78BFA" letter-spacing="1">
+    <text x="32" y="32" font-family="Inter, sans-serif" font-size="7" font-weight="500" fill="#A78BFA" letter-spacing="1">
       BUILD SMARTER
     </text>
   </g>
