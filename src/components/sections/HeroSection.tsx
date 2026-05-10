@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-primary via-purple-800 to-brand-pink">
       <div className="absolute inset-0 bg-black/20"></div>
       
       <div className="absolute inset-0">
@@ -61,7 +61,7 @@ export default function HeroSection() {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-            <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
+            <div className="w-12 h-12 bg-gradient-to-r from-brand-pink to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
               <Smartphone className="text-white" size={24} />
             </div>
             <h3 className="text-white font-semibold text-lg mb-2">Mobile Apps</h3>
@@ -69,7 +69,7 @@ export default function HeroSection() {
           </div>
 
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
+            <div className="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-pink rounded-lg flex items-center justify-center mb-4 mx-auto">
               <Monitor className="text-white" size={24} />
             </div>
             <h3 className="text-white font-semibold text-lg mb-2">Web Solutions</h3>
@@ -77,7 +77,7 @@ export default function HeroSection() {
           </div>
 
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-            <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
+            <div className="w-12 h-12 bg-gradient-to-r from-brand-pink to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
               <Zap className="text-white" size={24} />
             </div>
             <h3 className="text-white font-semibold text-lg mb-2">AI Solutions</h3>

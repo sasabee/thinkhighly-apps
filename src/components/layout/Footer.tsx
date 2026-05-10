@@ -7,9 +7,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg"></div>
-              <span className="font-bold text-xl">ThinkHighly Apps</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/logo.svg" 
+                alt="ThinkHighly Apps Logo" 
+                className="h-8 w-auto"
+              />
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               We build modern apps, websites, and digital solutions for businesses, startups, and organizations in South Africa.
