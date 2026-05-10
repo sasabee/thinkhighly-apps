@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-black'
+      isScrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-gray-900'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -46,7 +46,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={`${
-                  isScrolled ? 'text-white hover:text-purple-400' : 'text-white hover:text-purple-300'
+                  isScrolled ? 'text-gray-300 hover:text-purple-600' : 'text-gray-300 hover:text-purple-400'
                 } transition-colors duration-200 font-medium`}
               >
                 {item.name}
