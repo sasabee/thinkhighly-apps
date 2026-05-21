@@ -50,7 +50,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="text-purple-400" size={20} />
-                <span className="text-gray-400">+27 12 345 6789</span>
+                <span className="text-gray-400">+27 67 659 4016</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="text-purple-400" size={20} />
@@ -58,7 +58,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="text-purple-400" size={20} />
-                <span className="text-gray-400">Johannesburg, South Africa</span>
+                <span className="text-gray-400">Pretoria, South Africa</span>
               </div>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 ThinkHighly Apps. All rights reserved. | Company Registration: 2024/123456/07
+              © 2026 ThinkHighly Apps. All rights reserved. | Company Registration: 2026/370706/07
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/privacy" className="text-gray-400 hover:text-purple-400 text-sm transition-colors">Privacy Policy</Link>

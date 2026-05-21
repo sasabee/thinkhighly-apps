@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Smartphone, Monitor, Palette, Cpu, Database, Cloud, ArrowRight } from 'lucide-react';
+import { Smartphone, Monitor, Palette, Cpu, Database, Cloud, ArrowRight, Link2 } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
@@ -29,17 +29,17 @@ const services = [
     description: 'Cutting-edge AI and automation services',
     technologies: 'Python, TensorFlow, OpenAI APIs'
   },
-  {
-    icon: Database,
-    title: 'Business Systems',
-    description: 'Custom software solutions for your business needs',
-    technologies: 'Java, .NET, PostgreSQL, MongoDB'
-  },
-  {
+    {
     icon: Cloud,
     title: 'Cloud Solutions',
     description: 'Scalable cloud infrastructure and deployment',
     technologies: 'AWS, Azure, Google Cloud, Docker'
+  },
+  {
+    icon: Link2,
+    title: 'Blockchain as a Service',
+    description: 'Decentralized solutions and smart contract development',
+    technologies: 'Ethereum, Solidity, Web3.js, Hyperledger'
   }
 ];
 

@@ -23,20 +23,70 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
-    alert('Thank you for your message! We will get back to you soon.');
+  const [loading, setLoading] =
+  useState(false);
+
+const [success, setSuccess] =
+  useState('');
+
+const [error, setError] =
+  useState('');
+
+const handleSubmit = async (
+  e: React.FormEvent
+) => {
+  e.preventDefault();
+
+  setLoading(true);
+  setSuccess('');
+  setError('');
+
+  try {
+    const response = await fetch(
+      '/api/contact',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type':
+            'application/json',
+        },
+        body: JSON.stringify(
+          formData
+        ),
+      }
+    );
+
+    const data =
+      await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        data.message ||
+          'Failed to send'
+      );
+    }
+
+    setSuccess(
+      'Message sent successfully!'
+    );
+
     setFormData({
       name: '',
       email: '',
       phone: '',
       company: '',
       service: '',
-      message: ''
+      message: '',
     });
-  };
+  } catch (err: any) {
+    setError(
+      err.message ||
+        'Something went wrong'
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="min-h-screen">
@@ -120,7 +170,7 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                        placeholder="+27 12 345 6789"
+                        placeholder="+27 67 659 4016"
                       />
                     </div>
                     
@@ -155,9 +205,9 @@ export default function Contact() {
                       <option value="mobile">Mobile App Development</option>
                       <option value="web">Website Development</option>
                       <option value="uiux">UI/UX Design</option>
+                       <option value="blockchain">Blockchain Solutions</option>
                       <option value="ai">AI Solutions</option>
-                      <option value="business">Business Systems</option>
-                      <option value="cloud">Cloud Solutions</option>
+                                            <option value="cloud">Cloud Solutions</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
@@ -178,12 +228,33 @@ export default function Contact() {
                     />
                   </div>
 
+                  {success && (
+                    <div className="bg-green-100 text-green-700 p-4 rounded-lg">
+                      {success}
+                    </div>
+                  )}
+
+                  {error && (
+                    <div className="bg-red-100 text-red-700 p-4 rounded-lg">
+                      {error}
+                    </div>
+                  )}
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
+                    disabled={loading}
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2 disabled:opacity-50"
                   >
-                    <Send size={20} />
-                    <span>Send Message</span>
+                    {loading ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send size={20} />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </button>
                 </form>
               </motion.div>
@@ -221,8 +292,8 @@ export default function Contact() {
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 mb-1">Phone</h3>
                         <p className="text-gray-600 mb-2">Mon-Fri, 9AM-6PM</p>
-                        <a href="tel:+27123456789" className="text-purple-600 hover:text-purple-700 font-medium">
-                          +27 12 345 6789
+                        <a href="tel:+27676594016" className="text-purple-600 hover:text-purple-700 font-medium">
+                          +27 67 659 4016
                         </a>
                       </div>
                     </div>
@@ -234,7 +305,7 @@ export default function Contact() {
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 mb-1">Office</h3>
                         <p className="text-gray-600">
-                          Johannesburg<br />
+                          Pretoria<br />
                           South Africa
                         </p>
                       </div>
@@ -270,7 +341,7 @@ export default function Contact() {
                     Get quick answers and support through WhatsApp for faster communication.
                   </p>
                   <a
-                    href="https://wa.me/27123456789"
+                    href="https://wa.me/27676594016"
                     className="inline-flex items-center bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors"
                   >
                     <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">

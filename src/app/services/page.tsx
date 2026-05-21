@@ -3,7 +3,7 @@
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
-import { Smartphone, Monitor, Palette, Cpu, Database, Cloud, CheckCircle, ArrowRight } from 'lucide-react';
+import { Smartphone, Monitor, Palette, Cpu, Database, Cloud, CheckCircle, ArrowRight, Link2 } from 'lucide-react';
 
 const services = [
   {
@@ -87,26 +87,6 @@ const services = [
     ]
   },
   {
-    icon: Database,
-    title: 'Business Systems',
-    description: 'Custom software solutions tailored to your specific business needs and workflows.',
-    technologies: ['Java', '.NET', 'PostgreSQL', 'MongoDB', 'Docker'],
-    benefits: [
-      'Increased efficiency',
-      'Better data management',
-      'Process automation',
-      'Real-time reporting',
-      'Integration capabilities'
-    ],
-    features: [
-      'Inventory management',
-      'CRM systems',
-      'ERP solutions',
-      'Project management',
-      'Reporting tools'
-    ]
-  },
-  {
     icon: Cloud,
     title: 'Cloud Solutions',
     description: 'Scalable cloud infrastructure and deployment solutions for optimal performance and reliability.',
@@ -124,6 +104,26 @@ const services = [
       'Microservices',
       'DevOps pipelines',
       'Monitoring solutions'
+    ]
+  },
+  {
+    icon: Link2,
+    title: 'Blockchain as a Service',
+    description: 'Decentralized solutions and smart contract development for secure, transparent business operations.',
+    technologies: ['Ethereum', 'Solidity', 'Web3.js', 'Hyperledger', 'IPFS'],
+    benefits: [
+      'Enhanced security',
+      'Transparency',
+      'Immutability',
+      'Decentralization',
+      'Trustless transactions'
+    ],
+    features: [
+      'Smart contracts',
+      'Token development',
+      'DeFi platforms',
+      'Supply chain tracking',
+      'Digital identity solutions'
     ]
   }
 ];

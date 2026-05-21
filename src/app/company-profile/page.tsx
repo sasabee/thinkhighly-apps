@@ -72,19 +72,19 @@ export default function CompanyProfile() {
                       </div>
                       <div className="flex items-center space-x-2">
                         <strong>Registration Number:</strong>
-                        <span>2024/123456/07</span>
+                        <span>2026/370706/07</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <strong>Tax Number:</strong>
-                        <span>1234567890</span>
+                        <span>9458105149</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <strong>B-BBEE Level:</strong>
-                        <span>Level 4 Contributor</span>
+                        <span>Level 1 Contributor</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <strong>Founded:</strong>
-                        <span>2024</span>
+                        <span>2026</span>
                       </div>
                     </div>
                   </div>
@@ -94,7 +94,7 @@ export default function CompanyProfile() {
                     <div className="space-y-2">
                       <div className="flex items-center space-x-2">
                         <Phone size={16} className="text-purple-600" />
-                        <span>+27 12 345 6789</span>
+                        <span>+27 67 659 4016</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Mail size={16} className="text-purple-600" />
@@ -102,7 +102,7 @@ export default function CompanyProfile() {
                       </div>
                       <div className="flex items-center space-x-2">
                         <MapPin size={16} className="text-purple-600" />
-                        <span>Johannesburg, South Africa</span>
+                        <span>Pretoria, South Africa</span>
                       </div>
                     </div>
                   </div>
@@ -133,28 +133,7 @@ export default function CompanyProfile() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Key Statistics
-                </h2>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">50+</div>
-                    <div className="text-gray-600">Projects Completed</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">30+</div>
-                    <div className="text-gray-600">Happy Clients</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">15+</div>
-                    <div className="text-gray-600">Team Members</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-purple-600 mb-2">98%</div>
-                    <div className="text-gray-600">Client Satisfaction</div>
-                  </div>
-                </div>
+               
 
                 <div className="mt-8 space-y-4">
                   <h3 className="text-xl font-semibold text-gray-900">Certifications & Compliance</h3>
@@ -169,7 +148,7 @@ export default function CompanyProfile() {
                     </div>
                     <div className="flex items-center space-x-2">
                       <Users className="text-purple-600" size={20} />
-                      <span>B-BBEE Level 4 Contributor</span>
+                      <span>B-BBEE Level 1 Contributor</span>
                     </div>
                   </div>
                 </div>
@@ -268,7 +247,7 @@ export default function CompanyProfile() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Industries Served
+                Industries
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Extensive experience across multiple sectors.

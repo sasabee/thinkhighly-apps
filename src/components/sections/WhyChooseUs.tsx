@@ -95,12 +95,9 @@ export default function WhyChooseUs() {
                 Let us help you leverage technology to achieve your business goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
+                
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">50+</div>
-                  <div className="text-gray-600">Projects Completed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">98%</div>
+                  <div className="text-3xl font-bold text-purple-600">100%</div>
                   <div className="text-gray-600">Client Satisfaction</div>
                 </div>
                 <div className="text-center">

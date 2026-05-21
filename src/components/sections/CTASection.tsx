@@ -44,7 +44,7 @@ export default function CTASection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <a href="tel:+27123456789" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-900 transition-all duration-200 flex items-center space-x-2">
+              <a href="tel:+27676594016" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-900 transition-all duration-200 flex items-center space-x-2">
                 <Phone size={20} />
                 <span>Call Us Now</span>
               </a>
@@ -81,8 +81,8 @@ export default function CTASection() {
               </div>
               <h3 className="text-white font-semibold text-lg mb-2">Call Us</h3>
               <p className="text-gray-200 text-sm mb-2">Mon-Fri, 9AM-6PM</p>
-              <a href="tel:+27123456789" className="text-purple-300 hover:text-white transition-colors">
-                +27 12 345 6789
+              <a href="tel:+27676594016" className="text-purple-300 hover:text-white transition-colors">
+                +27 67 659 4016
               </a>
             </motion.div>
 
@@ -100,8 +100,8 @@ export default function CTASection() {
               </div>
               <h3 className="text-white font-semibold text-lg mb-2">WhatsApp</h3>
               <p className="text-gray-200 text-sm mb-2">Quick responses</p>
-              <a href="https://wa.me/27123456789" className="text-purple-300 hover:text-white transition-colors">
-                +27 12 345 6789
+              <a href="https://wa.me/27676594016" className="text-purple-300 hover:text-white transition-colors">
+                +27 67 659 4016
               </a>
             </motion.div>
           </div>

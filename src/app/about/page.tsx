@@ -45,10 +45,10 @@ export default function About() {
                     ThinkHighly Apps was founded with a clear vision: to help businesses and organizations transform their ideas into powerful digital solutions through modern technology and innovation.
                   </p>
                   <p>
-                    What started as a small team of passionate developers has grown into a full-service digital solutions company, serving clients across various industries in South Africa and beyond.
+                    Driven by a passion for problem-solving and digital excellence, we focus on building modern websites, mobile applications, business systems, and intelligent technology solutions tailored to real-world needs.
                   </p>
                   <p>
-                    Our journey has been driven by a commitment to excellence, innovation, and client success. We believe that technology should empower businesses, not complicate them.
+                    At ThinkHighly Apps, we believe technology should empower growth, improve efficiency, and create meaningful impact. Our mission is to deliver innovative, scalable, and user-focused solutions that help businesses thrive in an increasingly digital world.
                   </p>
                 </div>
               </motion.div>
@@ -60,24 +60,7 @@ export default function About() {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8"
               >
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-purple-600 mb-2">50+</div>
-                    <div className="text-gray-600">Projects Completed</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-purple-600 mb-2">30+</div>
-                    <div className="text-gray-600">Happy Clients</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-purple-600 mb-2">5+</div>
-                    <div className="text-gray-600">Years Experience</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-purple-600 mb-2">15+</div>
-                    <div className="text-gray-600">Team Members</div>
-                  </div>
-                </div>
+            
               </motion.div>
             </div>
           </div>

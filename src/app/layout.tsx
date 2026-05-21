@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ThinkHighly Apps - BUILD SMARTER",
   description: "ThinkHighly Apps - We build modern apps, websites, and digital solutions for businesses, startups, and organizations in South Africa. Think Highly. Build Smarter.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

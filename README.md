@@ -137,7 +137,7 @@ npm run build
 
 For support or questions:
 - **Email**: info@thinkhighlyapps.co.za
-- **Phone**: +27 12 345 6789
+- **Phone**: +27 67 6594016
 - **Website**: thinkhighlyapps.co.za
 
 ---

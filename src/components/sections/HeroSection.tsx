@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Smartphone, Monitor, Zap } from 'lucide-react';
+import { ArrowRight, Play, Smartphone, Monitor, Zap, Blocks } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HeroSection() {
@@ -22,7 +22,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            Think Highly.
+            ThinkHighly.
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
               Build Smarter.
             </span>
@@ -35,6 +35,14 @@ export default function HeroSection() {
             className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto"
           >
             We build modern apps, websites, and digital solutions for businesses, startups, and organizations.
+          </motion.p>
+           <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto"
+          >
+            Your Company. Your Vision. Let's Make It Digital
           </motion.p>
 
           <motion.div
@@ -58,7 +66,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
         >
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
             <div className="w-12 h-12 bg-gradient-to-r from-brand-pink to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
@@ -83,6 +91,19 @@ export default function HeroSection() {
             <h3 className="text-white font-semibold text-lg mb-2">AI Solutions</h3>
             <p className="text-gray-300 text-sm">Cutting-edge AI and automation services</p>
           </div>
+         <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+          <div className="w-12 h-12 bg-gradient-to-r from-brand-pink to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
+            <Blocks className="text-white" size={24} />
+          </div>
+
+          <h3 className="text-white font-semibold text-lg mb-2">
+            Blockchain Solutions
+          </h3>
+
+          <p className="text-gray-300 text-sm">
+            Secure blockchain and decentralized technology services
+          </p>
+        </div>
         </motion.div>
       </div>
 

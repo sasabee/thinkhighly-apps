@@ -64,7 +64,7 @@ Set these in your hosting platform:
 ```bash
 # Optional: For contact form functionality
 NEXT_PUBLIC_CONTACT_EMAIL=info@thinkhighlyapps.co.za
-NEXT_PUBLIC_CONTACT_PHONE=+27123456789
+NEXT_PUBLIC_CONTACT_PHONE=+27676594016
 ```
 
 ## 🌍 Domain Setup

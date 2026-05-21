@@ -96,17 +96,31 @@ export default function CapabilityStatement() {
               viewport={{ once: true }}
             >
               <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-200 mb-12">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900">Download Capability Statement</h2>
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center space-x-2">
-                    <Download size={20} />
-                    <span>Download PDF</span>
-                  </button>
-                </div>
-                <p className="text-gray-600">
-                  Official capability statement for government and corporate procurement processes.
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-4">
+              
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  Download Capability Statement
+                </h2>
+
+                <p className="text-gray-600 max-w-2xl">
+                  Download our official capability statement to learn more
+                  about ThinkHighly Apps, our services, technical expertise,
+                  and digital solutions capabilities.
                 </p>
               </div>
+
+              <a
+                href="/documents/ThinkHighly-Capability-Statement.pdf"
+                download
+                target="_blank"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-4 rounded-xl font-semibold hover:shadow-xl hover:scale-[1.02] transition-all duration-300 whitespace-nowrap"
+              >
+                <Download size={20} className="mr-2" />
+                Download PDF
+              </a>
+            </div>
+</div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
@@ -116,10 +130,10 @@ export default function CapabilityStatement() {
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">Company Information</h3>
                       <div className="space-y-2">
                         <div><strong>Legal Name:</strong> ThinkHighly Apps (Pty) Ltd</div>
-                        <div><strong>Registration Number:</strong> 2024/123456/07</div>
-                        <div><strong>Tax Number:</strong> 1234567890</div>
-                        <div><strong>B-BBEE Level:</strong> Level 4 Contributor</div>
-                        <div><strong>Established:</strong> 2024</div>
+                        <div><strong>Registration Number:</strong> 2026/370706/07</div>
+                        <div><strong>Tax Number:</strong> 9458105149</div>
+                        <div><strong>B-BBEE Level:</strong> Level 1 Contributor</div>
+                        <div><strong>Established:</strong> 2026</div>
                       </div>
                     </div>
                     
@@ -140,7 +154,7 @@ export default function CapabilityStatement() {
                   <div className="space-y-4">
                     <div className="bg-gray-50 rounded-lg p-4">
                       <h3 className="font-semibold text-gray-900 mb-1">CEO & Lead Developer</h3>
-                      <p className="text-gray-600 text-sm mb-2">8+ years experience in software development</p>
+                      <p className="text-gray-600 text-sm mb-2">5+ years experience in software development</p>
                       <div className="flex flex-wrap gap-2">
                         <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">React</span>
                         <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">Node.js</span>
@@ -160,7 +174,7 @@ export default function CapabilityStatement() {
                     
                     <div className="bg-gray-50 rounded-lg p-4">
                       <h3 className="font-semibold text-gray-900 mb-1">Project Manager</h3>
-                      <p className="text-gray-600 text-sm mb-2">5+ years experience in tech project management</p>
+                      <p className="text-gray-600 text-sm mb-2">years of experience in tech project management</p>
                       <div className="flex flex-wrap gap-2">
                         <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">Agile</span>
                         <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">Scrum</span>
@@ -244,62 +258,7 @@ export default function CapabilityStatement() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Past Performance
-              </h2>
-              <p className="text-xl text-gray-600">
-                Recent project successes and client achievements.
-              </p>
-            </motion.div>
-
-            <div className="space-y-6">
-              {pastPerformance.map((project, index) => (
-                <motion.div
-                  key={project.client}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-xl p-6 shadow-lg"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">{project.client}</h3>
-                      <p className="text-gray-600 text-sm">{project.project}</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-purple-600">{project.value}</div>
-                      <div className="text-gray-600 text-sm">Contract Value</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-xl font-semibold text-gray-900">{project.duration}</div>
-                      <div className="text-gray-600 text-sm">Duration</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-lg font-semibold text-green-600">{project.outcome}</div>
-                      <div className="text-gray-600 text-sm">Outcome</div>
-                    </div>
-                    <div className="text-center">
-                      <button className="px-4 py-2 bg-purple-100 text-purple-700 rounded-lg font-medium text-sm hover:bg-purple-200 transition-colors">
-                        View Case Study
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -333,7 +292,7 @@ export default function CapabilityStatement() {
                   <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Users className="text-white" size={32} />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">B-BBEE Level 4</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">B-BBEE Level 1</h3>
                   <p className="text-gray-600 text-sm">Broad-Based Black Economic Empowerment</p>
                 </div>
 
@@ -358,21 +317,57 @@ export default function CapabilityStatement() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Ready to Work With Us?
-              </h2>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Download our complete capability statement or contact our procurement team to discuss partnership opportunities.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2">
-                  <Download size={20} />
-                  <span>Download Capability Statement</span>
-                </button>
-                <button className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-all duration-200">
-                  Contact Procurement Team
-                </button>
-              </div>
+              <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center"
+    >
+      <div className="bg-white rounded-3xl shadow-xl border border-purple-100 p-8 md:p-12">
+
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          Ready to Work With Us?
+        </h2>
+
+        <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+          Download our complete capability statement to learn more
+          about ThinkHighly Apps, our technical expertise,
+          service offerings, and digital capabilities.
+          For procurement, partnerships, or business
+          opportunities, connect with our team.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* Download Capability Statement */}
+          <a
+            href="/documents/ThinkHighly-Capability-Statement.pdf"
+            download
+            target="_blank"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center space-x-2"
+          >
+            <Download size={20} />
+            <span>
+              Download Capability Statement
+            </span>
+          </a>
+
+          {/* Contact Procurement Team */}
+          <a
+            href="mailto:info@thinkhighlyapps.co.za?subject=Procurement Inquiry"
+            className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-xl font-semibold hover:bg-purple-50 hover:shadow-md transition-all duration-300 flex items-center justify-center"
+          >
+            Contact Procurement Team
+          </a>
+
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
             </motion.div>
           </div>
         </section>

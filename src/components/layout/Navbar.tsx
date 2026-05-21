@@ -88,9 +88,9 @@ export default function Navbar() {
             ))}
             <div className="pt-4 pb-2 border-t border-gray-200">
               <div className="flex items-center space-x-4 px-3">
-                <a href="tel:+27123456789" className="flex items-center space-x-2 text-gray-700 hover:text-purple-600">
+                <a href="tel:+27 67 659 4016" className="flex items-center space-x-2 text-gray-700 hover:text-purple-600">
                   <Phone size={16} />
-                  <span className="text-sm">+27 12 345 6789</span>
+                  <span className="text-sm">+27 67 659 4016</span>
                 </a>
                 <a href="mailto:info@thinkhighlyapps.co.za" className="flex items-center space-x-2 text-gray-700 hover:text-purple-600">
                   <Mail size={16} />
