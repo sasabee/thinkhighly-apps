@@ -13,13 +13,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ThinkHighly Apps - BUILD SMARTER",
-  description: "ThinkHighly Apps - We build modern apps, websites, and digital solutions for businesses, startups, and organizations in South Africa. Think Highly. Build Smarter.",
-  icons: {
-    icon: "/favicon.svg",
+  title:
+    'ThinkHighly Apps | Software Development & Digital Solutions',
+
+  description:
+    'ThinkHighly Apps provides modern websites, mobile apps, AI automation, and custom software solutions in South Africa.',
+
+  keywords: [
+    'software development South Africa',
+    'mobile app development',
+    'web development Johannesburg',
+    'ThinkHighly Apps',
+  ],
+
+  metadataBase: new URL(
+    'https://thinkhighlyapps.co.za'
+  ),
+
+  verification: {
+    google: 'Y7UjkCaYP6L9hhSl7o6QpN3cwacZdnfVNVNfzGCTytI',
+  },
+
+  openGraph: {
+    title: 'ThinkHighly Apps',
+    description:
+      'Modern software development, mobile apps, websites, and AI-powered solutions.',
+    url: 'https://thinkhighlyapps.co.za',
+    siteName: 'ThinkHighly Apps',
+    type: 'website',
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,3 +57,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+
