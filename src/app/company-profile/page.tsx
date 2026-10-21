@@ -3,228 +3,164 @@
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
-import { Download, Award, Users, Target, Shield, TrendingUp, Calendar, MapPin, Mail } from 'lucide-react';
+import { ArrowRight, Award, Calendar, Check, Download, Mail, MapPin, Printer, Shield, Users } from 'lucide-react';
+import Link from 'next/link';
+
+const companyDetails = [
+  { label: 'Legal name', value: 'ThinkHighly Apps (Pty) Ltd' },
+  { label: 'Registration number', value: '2026/370706/07' },
+  { label: 'Tax number', value: '9458105149' },
+  { label: 'B-BBEE level', value: 'Level 1 Contributor' },
+  { label: 'Founded', value: '2026' },
+  { label: 'Head office', value: 'Pretoria, South Africa' },
+];
+
+const expertise = [
+  { title: 'Web development', text: 'Business websites, event websites, online shops and web platforms.', technologies: ['React', 'Next.js', 'Node.js', 'Spring Boot', 'TypeScript'] },
+  { title: 'Mobile development', text: 'Android and iPhone apps for ordering, bookings and customer loyalty.', technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase'] },
+  { title: 'AI & automation', text: 'Chatbots, smart reminders and tools that take repetitive work off your hands.', technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI APIs', 'scikit-learn'] },
+  { title: 'Cloud & DevOps', text: 'Secure hosting, reliable deployment and systems that grow with demand.', technologies: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'CI/CD'] },
+  { title: 'Database systems', text: 'Well-structured data for bookings, stock, clients and reporting.', technologies: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Elasticsearch'] },
+  { title: 'UI/UX design', text: 'Branding, layouts and user journeys that are simple and beautiful.', technologies: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Principle'] },
+];
+
+const industries = [
+  'Weddings & events', 'Hospitality', 'Retail & e-commerce', 'Healthcare', 'Education', 'Finance',
+  'Real estate', 'Entertainment', 'Manufacturing', 'Transportation', 'Government', 'Non-profit',
+];
+
+const compliance = [
+  { icon: Award, title: 'ISO 9001:2015', text: 'Quality management' },
+  { icon: Shield, title: 'POPIA compliant', text: 'Data protection & privacy' },
+  { icon: Users, title: 'B-BBEE Level 1', text: 'Contributor status' },
+];
+
+const hours = [
+  ['Monday – Friday', '9:00 AM – 6:00 PM'],
+  ['Saturday', '10:00 AM – 2:00 PM'],
+  ['Sunday', 'Closed'],
+];
+
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 },
+  viewport: { once: true },
+};
 
 export default function CompanyProfile() {
   return (
     <div className="min-h-screen">
       <Navbar />
       <main>
-        <section className="py-20 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-stone-50 pt-32 lg:pt-40 pb-20 print:pt-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center"
+              className="lg:col-span-7"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Company Profile
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand mb-6">Company profile</p>
+              <h1 className="font-display text-5xl md:text-6xl font-medium text-ink leading-[1.05] tracking-tight mb-6">
+                ThinkHighly Apps
               </h1>
-              <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-                Learn more about ThinkHighly Apps and our commitment to excellence in digital solutions.
+              <p className="text-lg md:text-xl text-stone-600 leading-relaxed mb-10 max-w-xl">
+                A South African digital studio building websites, mobile apps and business systems for
+                individuals, small businesses, corporates and government.
               </p>
-            </motion.div>
-          </div>
-        </section>
-
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="mb-16"
-            >
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-200">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900">Download Company Profile</h2>
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center space-x-2">
-                    <Download size={20} />
-                    <span>Download PDF</span>
-                  </button>
-                </div>
-                <p className="text-gray-600">
-                  Get our complete company profile in PDF format for detailed information about our services, expertise, and achievements.
-                </p>
+              <div className="flex flex-col sm:flex-row gap-4 print:hidden">
+                <button
+                  type="button"
+                  onClick={() => window.print()}
+                  className="bg-ink text-white px-8 py-4 rounded-full font-medium hover:bg-stone-700 transition-colors inline-flex items-center justify-center gap-2"
+                >
+                  <Printer size={18} />
+                  Save as PDF
+                </button>
+                <Link
+                  href="/capability-statement"
+                  className="border border-stone-300 text-ink px-8 py-4 rounded-full font-medium hover:border-ink transition-colors inline-flex items-center justify-center gap-2"
+                >
+                  View Capability Statement
+                </Link>
               </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                  Company Overview
-                </h2>
-                
-                <div className="space-y-6 text-gray-600">
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Company Information</h3>
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <strong>Legal Name:</strong>
-                        <span>ThinkHighly Apps (Pty) Ltd</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <strong>Registration Number:</strong>
-                        <span>2026/370706/07</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <strong>Tax Number:</strong>
-                        <span>9458105149</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <strong>B-BBEE Level:</strong>
-                        <span>Level 1 Contributor</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <strong>Founded:</strong>
-                        <span>2026</span>
-                      </div>
-                    </div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:col-span-5 rounded-3xl bg-white border border-stone-200 p-8"
+            >
+              <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500 mb-6">At a glance</h2>
+              <dl className="divide-y divide-stone-200">
+                {companyDetails.map((detail) => (
+                  <div key={detail.label} className="flex justify-between gap-6 py-3">
+                    <dt className="text-stone-500">{detail.label}</dt>
+                    <dd className="font-medium text-ink text-right">{detail.value}</dd>
                   </div>
-
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Contact Details</h3>
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <Mail size={16} className="text-purple-600" />
-                        <span>info@thinkhighlyapps.co.za</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <MapPin size={16} className="text-purple-600" />
-                        <span>Pretoria, South Africa</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Business Hours</h3>
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <Calendar size={16} className="text-purple-600" />
-                        <span>Monday - Friday: 9:00 AM - 6:00 PM</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Calendar size={16} className="text-purple-600" />
-                        <span>Saturday: 10:00 AM - 2:00 PM</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Calendar size={16} className="text-purple-600" />
-                        <span>Sunday: Closed</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-               
-
-                <div className="mt-8 space-y-4">
-                  <h3 className="text-xl font-semibold text-gray-900">Certifications & Compliance</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-center space-x-2">
-                      <Award className="text-purple-600" size={20} />
-                      <span>ISO 9001:2015 Quality Management</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Shield className="text-purple-600" size={20} />
-                      <span>POPIA Compliant</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Users className="text-purple-600" size={20} />
-                      <span>B-BBEE Level 1 Contributor</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+                ))}
+              </dl>
+            </motion.div>
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Our Expertise
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Technical capabilities and industry experience.
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12">
+            <motion.div {...fadeUp} className="lg:col-span-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand mb-4">Who we are</p>
+              <h2 className="font-display text-4xl md:text-5xl font-medium text-ink tracking-tight">Company overview</h2>
+            </motion.div>
+            <motion.div {...fadeUp} className="lg:col-span-8 space-y-6 text-lg text-stone-600 leading-relaxed">
+              <p className="font-display text-2xl md:text-3xl text-ink leading-snug">
+                We turn ideas into websites, apps and systems that people enjoy using.
               </p>
+              <p>
+                ThinkHighly Apps was founded in 2026 to make quality digital work accessible to everyone, from couples
+                planning a wedding and kasi businesses getting online, to organisations that need custom software.
+              </p>
+              <p>
+                Our young, multi-skilled team combines modern technology with clear communication. We design, build,
+                host and support every project, so our clients have one trusted partner from the first conversation to
+                long after launch.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-6 pt-4">
+                <div className="border-t-2 border-ink pt-4">
+                  <h3 className="font-display text-2xl text-ink mb-2">Mission</h3>
+                  <p className="text-base">To give every person and business a beautiful, working digital presence without the stress or jargon.</p>
+                </div>
+                <div className="border-t-2 border-ink pt-4">
+                  <h3 className="font-display text-2xl text-ink mb-2">Vision</h3>
+                  <p className="text-base">To be the most trusted digital partner in Africa, known for care, reliability and quality.</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-24 bg-stone-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div {...fadeUp} className="max-w-3xl mb-16">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand mb-4">What we do</p>
+              <h2 className="font-display text-4xl md:text-5xl font-medium text-ink tracking-tight mb-5">Our expertise</h2>
+              <p className="text-lg text-stone-600 leading-relaxed">The services we offer and the technologies we use to deliver them.</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Target,
-                  title: 'Web Development',
-                  technologies: ['React', 'Next.js', 'Node.js', 'Spring Boot', 'TypeScript']
-                },
-                {
-                  icon: Users,
-                  title: 'Mobile Development',
-                  technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase']
-                },
-                {
-                  icon: Shield,
-                  title: 'AI & Machine Learning',
-                  technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI APIs', 'scikit-learn']
-                },
-                {
-                  icon: TrendingUp,
-                  title: 'Cloud & DevOps',
-                  technologies: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'CI/CD']
-                },
-                {
-                  icon: Award,
-                  title: 'Database Systems',
-                  technologies: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Elasticsearch']
-                },
-                {
-                  icon: Users,
-                  title: 'UI/UX Design',
-                  technologies: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Principle']
-                }
-              ].map((expertise, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-200 border border-stone-200 rounded-2xl overflow-hidden">
+              {expertise.map((item, index) => (
                 <motion.div
-                  key={expertise.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-xl p-6 shadow-lg"
+                  key={item.title}
+                  {...fadeUp}
+                  transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
+                  className="bg-white p-8"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center mb-4">
-                    <expertise.icon className="text-white" size={24} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {expertise.title}
-                  </h3>
+                  <span className="font-display text-3xl text-stone-300">0{index + 1}</span>
+                  <h3 className="font-display text-2xl font-medium text-ink mt-3 mb-2">{item.title}</h3>
+                  <p className="text-stone-600 leading-relaxed mb-5">{item.text}</p>
                   <div className="flex flex-wrap gap-2">
-                    {expertise.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-medium rounded-full"
-                      >
-                        {tech}
-                      </span>
+                    {item.technologies.map((tech) => (
+                      <span key={tech} className="text-xs text-stone-600 border border-stone-200 rounded-full px-3 py-1">{tech}</span>
                     ))}
                   </div>
                 </motion.div>
@@ -233,79 +169,91 @@ export default function CompanyProfile() {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Industries
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Extensive experience across multiple sectors.
-              </p>
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12">
+            <motion.div {...fadeUp} className="lg:col-span-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand mb-4">Industries</p>
+              <h2 className="font-display text-4xl md:text-5xl font-medium text-ink tracking-tight">Who we serve</h2>
             </motion.div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                'E-commerce',
-                'Healthcare',
-                'Education',
-                'Finance',
-                'Retail',
-                'Manufacturing',
-                'Entertainment',
-                'Real Estate',
-                'Government',
-                'Non-Profit',
-                'Transportation',
-                'Hospitality'
-              ].map((industry, index) => (
-                <motion.div
-                  key={industry}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 text-center"
-                >
-                  <div className="font-semibold text-gray-900">{industry}</div>
-                </motion.div>
+            <motion.ul {...fadeUp} className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4">
+              {industries.map((industry) => (
+                <li key={industry} className="flex items-center gap-3 text-stone-700 border-b border-stone-100 pb-4">
+                  <Check className="text-brand shrink-0" size={18} />
+                  {industry}
+                </li>
               ))}
-            </div>
+            </motion.ul>
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Ready to Partner With Us?
-              </h2>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Download our complete company profile or get in touch to discuss how we can help transform your business.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2">
-                  <Download size={20} />
-                  <span>Download Full Profile</span>
-                </button>
-                <button className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-all duration-200">
-                  Contact Sales Team
-                </button>
-              </div>
+        <section className="py-24 bg-stone-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <motion.div {...fadeUp} className="rounded-3xl bg-white border border-stone-200 p-8">
+              <h2 className="font-display text-2xl text-ink mb-6">Certifications & compliance</h2>
+              <ul className="space-y-5">
+                {compliance.map((item) => (
+                  <li key={item.title} className="flex items-start gap-4">
+                    <div className="w-10 h-10 shrink-0 bg-brand-soft rounded-xl flex items-center justify-center">
+                      <item.icon className="text-brand" size={18} />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-ink">{item.title}</div>
+                      <div className="text-sm text-stone-500">{item.text}</div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="rounded-3xl bg-white border border-stone-200 p-8">
+              <h2 className="font-display text-2xl text-ink mb-6">Business hours</h2>
+              <dl className="divide-y divide-stone-200">
+                {hours.map(([day, time]) => (
+                  <div key={day} className="flex justify-between gap-4 py-3">
+                    <dt className="flex items-center gap-2 text-stone-600"><Calendar size={16} className="text-brand" />{day}</dt>
+                    <dd className="font-medium text-ink">{time}</dd>
+                  </div>
+                ))}
+              </dl>
+            </motion.div>
+
+            <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="rounded-3xl bg-white border border-stone-200 p-8">
+              <h2 className="font-display text-2xl text-ink mb-6">Contact details</h2>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3">
+                  <Mail size={18} className="text-brand" />
+                  <a href="mailto:info@thinkhighlyapps.co.za" className="text-stone-700 hover:text-brand underline-offset-4 hover:underline">info@thinkhighlyapps.co.za</a>
+                </li>
+                <li className="flex items-center gap-3 text-stone-700">
+                  <MapPin size={18} className="text-brand" />
+                  Pretoria, South Africa
+                </li>
+              </ul>
             </motion.div>
           </div>
+        </section>
+
+        <section className="py-24 bg-ink print:hidden">
+          <motion.div {...fadeUp} className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-white tracking-tight mb-6">Ready to partner with us?</h2>
+            <p className="text-lg text-stone-300 leading-relaxed mb-10">
+              Tell us about your project, tender or partnership opportunity and we&apos;ll get back to you within 24 hours.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="bg-white text-ink px-8 py-4 rounded-full font-medium hover:bg-stone-200 transition-colors inline-flex items-center justify-center gap-2 group">
+                Contact Us
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+              </Link>
+              <a
+                href="/documents/ThinkHighly-Capability-Statement.pdf"
+                download
+                className="border border-stone-600 text-white px-8 py-4 rounded-full font-medium hover:border-white transition-colors inline-flex items-center justify-center gap-2"
+              >
+                <Download size={18} />
+                Capability Statement (PDF)
+              </a>
+            </div>
+          </motion.div>
         </section>
       </main>
       <Footer />
