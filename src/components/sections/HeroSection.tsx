@@ -1,120 +1,90 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Smartphone, Monitor, Zap, Blocks } from 'lucide-react';
+import { ArrowRight, Check, CalendarCheck, Heart } from 'lucide-react';
 import Link from 'next/link';
+import { BrowserFrame, WeddingPreview } from '@/components/sections/WebsiteExamples';
+
+const highlights = ['No tech skills needed', 'Looks great on every phone', 'Friendly local support'];
+
+const audiences = ['Weddings', 'Birthdays & Parties', 'Restaurants & Cafés', 'Salons & Beauty', 'Shops & Retail', 'Churches & NGOs'];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-primary via-purple-800 to-brand-pink">
-      <div className="absolute inset-0 bg-black/20"></div>
-      
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="relative bg-stone-50 pt-28 lg:pt-36 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center pb-20 lg:pb-28">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            ThinkHighly.
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
-              Build Smarter.
-            </span>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand mb-6">
+            Website design · South Africa
+          </p>
+          <h1 className="font-display text-5xl md:text-6xl font-medium text-ink leading-[1.05] tracking-tight mb-6">
+            Websites for your celebrations and your business.
           </h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto"
-          >
-            We build modern apps, websites, and digital solutions for businesses, startups, and organizations.
-          </motion.p>
-           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto"
-          >
-            Your Company. Your Vision. Let's Make It Digital
-          </motion.p>
+          <p className="text-lg md:text-xl text-stone-600 leading-relaxed mb-10 max-w-xl">
+            From wedding RSVPs to online bookings for your salon, we design and build
+            beautiful websites for you. You tell us what you want. We take care of the rest.
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <Link href="/contact" className="bg-white text-purple-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200 flex items-center space-x-2 group">
-              <span>Get a Quote</span>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <Link href="/contact" className="bg-ink text-white px-8 py-4 rounded-full font-medium hover:bg-stone-700 transition-colors duration-200 inline-flex items-center justify-center gap-2 group">
+              Get a Quote
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
             </Link>
-            <Link href="/portfolio" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-900 transition-all duration-200 flex items-center space-x-2">
-              <Play size={20} />
-              <span>View Portfolio</span>
+            <Link href="#examples" className="border border-stone-300 text-ink px-8 py-4 rounded-full font-medium hover:border-ink transition-colors duration-200 inline-flex items-center justify-center">
+              See Examples
             </Link>
-          </motion.div>
+          </div>
+
+          <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2">
+            {highlights.map((item) => (
+              <li key={item} className="flex items-center gap-2 text-sm text-stone-600">
+                <Check className="text-brand" size={16} />
+                {item}
+              </li>
+            ))}
+          </ul>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative hidden md:block"
         >
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-            <div className="w-12 h-12 bg-gradient-to-r from-brand-pink to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <Smartphone className="text-white" size={24} />
+          <BrowserFrame url="thandiandsipho.co.za">
+            <WeddingPreview eager />
+          </BrowserFrame>
+
+          <div className="absolute -left-8 -bottom-8 bg-white rounded-2xl shadow-xl border border-stone-200 p-4 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-brand-soft flex items-center justify-center">
+              <CalendarCheck className="text-brand" size={20} />
             </div>
-            <h3 className="text-white font-semibold text-lg mb-2">Mobile Apps</h3>
-            <p className="text-gray-300 text-sm">Native and cross-platform mobile applications</p>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-            <div className="w-12 h-12 bg-gradient-to-r from-brand-primary to-brand-pink rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <Monitor className="text-white" size={24} />
+            <div>
+              <div className="text-sm font-semibold text-ink">New RSVP</div>
+              <div className="text-xs text-stone-500">Nomsa is coming, plus 1</div>
             </div>
-            <h3 className="text-white font-semibold text-lg mb-2">Web Solutions</h3>
-            <p className="text-gray-300 text-sm">Modern websites and web applications</p>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-            <div className="w-12 h-12 bg-gradient-to-r from-brand-pink to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <Zap className="text-white" size={24} />
-            </div>
-            <h3 className="text-white font-semibold text-lg mb-2">AI Solutions</h3>
-            <p className="text-gray-300 text-sm">Cutting-edge AI and automation services</p>
+          <div className="absolute -right-4 -top-6 bg-white rounded-2xl shadow-xl border border-stone-200 px-4 py-3 flex items-center gap-2">
+            <Heart className="text-rose-400 fill-rose-400" size={16} />
+            <span className="text-sm font-medium text-ink">124 guests confirmed</span>
           </div>
-         <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-          <div className="w-12 h-12 bg-gradient-to-r from-brand-pink to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
-            <Blocks className="text-white" size={24} />
-          </div>
-
-          <h3 className="text-white font-semibold text-lg mb-2">
-            Blockchain Solutions
-          </h3>
-
-          <p className="text-gray-300 text-sm">
-            Secure blockchain and decentralized technology services
-          </p>
-        </div>
         </motion.div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
-        >
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
-        </motion.div>
+      <div className="border-t border-stone-200 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row md:items-center gap-4">
+          <span className="text-sm font-medium text-stone-500 shrink-0">We build websites for</span>
+          <div className="flex flex-wrap gap-x-8 gap-y-2">
+            {audiences.map((audience) => (
+              <span key={audience} className="font-display text-lg text-ink">{audience}</span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

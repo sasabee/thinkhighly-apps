@@ -3,7 +3,7 @@
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
-import { Download, Award, Users, Target, Shield, TrendingUp, Calendar, MapPin, Phone, Mail } from 'lucide-react';
+import { Download, Award, Users, Target, Shield, TrendingUp, Calendar, MapPin, Mail } from 'lucide-react';
 
 export default function CompanyProfile() {
   return (
@@ -92,10 +92,6 @@ export default function CompanyProfile() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Contact Details</h3>
                     <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <Phone size={16} className="text-purple-600" />
-                        <span>+27 67 659 4016</span>
-                      </div>
                       <div className="flex items-center space-x-2">
                         <Mail size={16} className="text-purple-600" />
                         <span>info@thinkhighlyapps.co.za</span>

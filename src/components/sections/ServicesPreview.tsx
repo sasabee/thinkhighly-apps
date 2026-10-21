@@ -1,68 +1,78 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Smartphone, Monitor, Palette, Cpu, Database, Cloud, ArrowRight, Link2 } from 'lucide-react';
+import { Smartphone, Monitor, Palette, Cpu, Database, ShoppingBag, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
   {
-    icon: Smartphone,
-    title: 'Mobile App Development',
-    description: 'Native and cross-platform mobile applications for iOS and Android',
-    technologies: 'React Native, Flutter, Swift, Kotlin'
+    icon: Monitor,
+    title: 'Business Websites',
+    description: 'A professional online home where customers can find you, see what you offer and get in touch.',
+    bestFor: 'Shops, salons, restaurants, churches, NGOs'
   },
   {
-    icon: Monitor,
-    title: 'Website Development',
-    description: 'Modern, responsive websites and web applications',
-    technologies: 'React, Next.js, Node.js, Spring Boot'
+    icon: ShoppingBag,
+    title: 'Online Shops',
+    description: 'Sell your products online and get paid by card, EFT or SnapScan, day or night.',
+    bestFor: 'Clothing, crafts, food, beauty products'
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile Apps',
+    description: 'Your own app that customers can download on Android and iPhone.',
+    bestFor: 'Ordering, loyalty rewards, bookings'
   },
   {
     icon: Palette,
-    title: 'UI/UX Design',
-    description: 'Beautiful, user-centered design solutions',
-    technologies: 'Figma, Adobe XD, Sketch'
+    title: 'Logos & Branding',
+    description: 'A logo, colours and a look that make your business or event stand out.',
+    bestFor: 'New businesses and fresh starts'
+  },
+  {
+    icon: Database,
+    title: 'Business Systems',
+    description: 'Simple tools to keep track of bookings, stock, staff or clients, built around how you work.',
+    bestFor: 'Growing businesses leaving paper and Excel behind'
   },
   {
     icon: Cpu,
-    title: 'AI Solutions',
-    description: 'Cutting-edge AI and automation services',
-    technologies: 'Python, TensorFlow, OpenAI APIs'
-  },
-    {
-    icon: Cloud,
-    title: 'Cloud Solutions',
-    description: 'Scalable cloud infrastructure and deployment',
-    technologies: 'AWS, Azure, Google Cloud, Docker'
-  },
-  {
-    icon: Link2,
-    title: 'Blockchain as a Service',
-    description: 'Decentralized solutions and smart contract development',
-    technologies: 'Ethereum, Solidity, Web3.js, Hyperledger'
+    title: 'AI & Automation',
+    description: 'Let technology handle repetitive work, like answering common questions or sending reminders.',
+    bestFor: 'Busy teams that want to save time'
   }
 ];
 
 export default function ServicesPreview() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Services
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We create scalable and innovative software solutions tailored to your business goals.
-          </p>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand mb-4">Services</p>
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-ink tracking-tight mb-5">
+              More ways we can help
+            </h2>
+            <p className="text-lg text-stone-600 leading-relaxed">
+              Ready to grow? We also build online shops, apps and tools that make running your business easier.
+            </p>
+          </div>
+          <Link
+            href="/services"
+            className="shrink-0 inline-flex items-center text-ink font-medium border-b border-ink pb-1 hover:text-brand hover:border-brand transition-colors"
+          >
+            View all services
+            <ArrowRight className="ml-2" size={18} />
+          </Link>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-200 border border-stone-200 rounded-2xl overflow-hidden">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -70,46 +80,21 @@ export default function ServicesPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+              className="bg-white p-8 group"
             >
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <service.icon className="text-white" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <service.icon className="text-brand mb-6" size={28} strokeWidth={1.5} />
+              <h3 className="font-display text-2xl font-medium text-ink mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-stone-600 leading-relaxed mb-4">
                 {service.description}
               </p>
-              <div className="text-sm text-purple-600 font-medium mb-4">
-                {service.technologies}
+              <div className="text-sm text-stone-500">
+                Great for: {service.bestFor}
               </div>
-              <Link 
-                href="/services"
-                className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium group"
-              >
-                Learn more
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
-              </Link>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <Link 
-            href="/services"
-            className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200"
-          >
-            View All Services
-            <ArrowRight className="ml-2" size={20} />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

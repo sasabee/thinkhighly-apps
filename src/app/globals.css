@@ -10,6 +10,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces);
+  --font-script: var(--font-pinyon);
+  --font-elegant: var(--font-cormorant);
+}
+
+/* Brand palette: one deep accent from the logo, used sparingly over warm neutrals */
+@theme {
+  --color-brand: #4C1D95;
+  --color-brand-soft: #F3F0F9;
+  --color-ink: #1C1917;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +32,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

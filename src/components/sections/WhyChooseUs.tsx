@@ -12,50 +12,51 @@ const reasons = [
   {
     icon: Clock,
     title: 'Fast Delivery',
-    description: 'Quick turnaround times with agile development methodology'
+    description: 'Event coming up soon? We can get your website live quickly'
   },
   {
     icon: Zap,
-    title: 'Modern Technologies',
-    description: 'Cutting-edge tech stack for scalable and robust solutions'
+    title: 'No Tech Skills Needed',
+    description: 'We handle everything: your web address, hosting, design and updates'
   },
   {
     icon: Users,
     title: 'Youth-Driven Innovation',
-    description: 'Fresh perspectives and creative problem-solving approaches'
+    description: 'A young, creative team with fresh, modern designs'
   },
   {
     icon: Shield,
     title: 'Reliable Support',
-    description: '24/7 technical support and maintenance services'
+    description: 'Need a change? Just send us a message and we\'ll sort it out'
   },
   {
     icon: TrendingUp,
-    title: 'Scalable Systems',
-    description: 'Solutions that grow with your business needs'
+    title: 'Grows With You',
+    description: 'Start simple and add bookings, a shop or an app later'
   }
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="max-w-3xl mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose ThinkHighly Apps
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand mb-4">Why ThinkHighly</p>
+          <h2 className="font-display text-4xl md:text-5xl font-medium text-ink tracking-tight mb-5">
+            Why people choose us
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We combine technical expertise with business understanding to deliver solutions that drive real results.
+          <p className="text-lg text-stone-600 leading-relaxed">
+            Friendly people who explain things simply and build websites you&apos;ll be proud to share.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.title}
@@ -63,17 +64,19 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="flex gap-5"
             >
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <reason.icon className="text-white" size={24} />
+              <div className="w-12 h-12 shrink-0 bg-brand-soft rounded-xl flex items-center justify-center">
+                <reason.icon className="text-brand" size={22} />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {reason.title}
-              </h3>
-              <p className="text-gray-600">
-                {reason.description}
-              </p>
+              <div>
+                <h3 className="text-lg font-semibold text-ink mb-1">
+                  {reason.title}
+                </h3>
+                <p className="text-stone-600 leading-relaxed">
+                  {reason.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -81,40 +84,29 @@ export default function WhyChooseUs() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-16 bg-white rounded-2xl p-8 shadow-xl"
+          className="mt-20 rounded-3xl bg-stone-50 border border-stone-200 p-8 md:p-12"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Ready to Transform Your Business?
+              <h3 className="font-display text-3xl font-medium text-ink mb-4">
+                Ready to get online?
               </h3>
-              <p className="text-gray-600 mb-6">
-                Join our growing list of satisfied clients who have experienced the ThinkHighly difference. 
-                Let us help you leverage technology to achieve your business goals.
+              <p className="text-stone-600 leading-relaxed">
+                Whether you&apos;re planning a wedding, throwing a party or growing a business,
+                we&apos;ll help you get a website that works for you.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">100%</div>
-                  <div className="text-gray-600">Client Satisfaction</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">24/7</div>
-                  <div className="text-gray-600">Support Available</div>
-                </div>
-              </div>
             </div>
-            <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl p-6">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                Industries We Serve
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-[0.15em] text-stone-500 mb-4">
+                Who we build for
               </h4>
               <div className="grid grid-cols-2 gap-3">
-                {['E-commerce', 'Healthcare', 'Education', 'Finance', 'Retail', 'Manufacturing', 'Entertainment', 'Real Estate'].map((industry) => (
-                  <div key={industry} className="flex items-center space-x-2">
-                    <CheckCircle className="text-purple-600" size={16} />
-                    <span className="text-gray-700 text-sm">{industry}</span>
+                {['Weddings', 'Birthdays & Parties', 'Restaurants & Cafés', 'Salons & Beauty', 'Shops & Retail', 'Churches & NGOs', 'Healthcare', 'Education'].map((industry) => (
+                  <div key={industry} className="flex items-center gap-2">
+                    <CheckCircle className="text-brand shrink-0" size={16} />
+                    <span className="text-stone-700 text-sm">{industry}</span>
                   </div>
                 ))}
               </div>

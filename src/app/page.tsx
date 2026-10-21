@@ -2,9 +2,10 @@ import HeroSection from '@/components/sections/HeroSection';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ServicesPreview from '@/components/sections/ServicesPreview';
-import PortfolioShowcase from '@/components/sections/PortfolioShowcase';
+import WebsiteExamples from '@/components/sections/WebsiteExamples';
+import WebsiteFeatures from '@/components/sections/WebsiteFeatures';
+import HowItWorks from '@/components/sections/HowItWorks';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
-
 import CTASection from '@/components/sections/CTASection';
 
 export default function Home() {
@@ -13,10 +14,11 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <WebsiteExamples />
+        <WebsiteFeatures />
+        <HowItWorks />
         <ServicesPreview />
-        <PortfolioShowcase />
         <WhyChooseUs />
-       
         <CTASection />
       </main>
       <Footer />

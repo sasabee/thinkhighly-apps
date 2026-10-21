@@ -1,9 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Fraunces, Geist, Geist_Mono, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+});
+
+// Used by the example website mockups (wedding/event invitation styling)
+const pinyonScript = Pinyon_Script({
+  variable: "--font-pinyon",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500"],
   subsets: ["latin"],
 });
 
@@ -14,12 +32,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title:
-    'ThinkHighly Apps | Software Development & Digital Solutions',
+    'ThinkHighly Apps | Websites for Weddings, Birthdays & Small Businesses',
 
   description:
-    'ThinkHighly Apps provides modern websites, mobile apps, AI automation, and custom software solutions in South Africa.',
+    'Beautiful, easy websites for weddings, birthday parties and small businesses in South Africa, plus mobile apps and custom software. No tech skills needed.',
 
   keywords: [
+    'wedding website South Africa',
+    'birthday party website',
+    'small business website',
+    'affordable website design',
     'software development South Africa',
     'mobile app development',
     'web development Johannesburg',
@@ -37,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ThinkHighly Apps',
     description:
-      'Modern software development, mobile apps, websites, and AI-powered solutions.',
+      'Websites for weddings, birthdays and small businesses, plus apps and custom software.',
     url: 'https://thinkhighlyapps.co.za',
     siteName: 'ThinkHighly Apps',
     type: 'website',
@@ -51,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${pinyonScript.variable} ${cormorant.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
