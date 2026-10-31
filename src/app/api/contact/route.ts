@@ -24,7 +24,7 @@ export async function POST(req: Request) {
 
     const transporter =
       nodemailer.createTransport({
-        host: 'mail.thinkhighlyapps.co.za',
+        host: 'cp76.domains.co.za',
         port: 465,
         secure: true,
         auth: {
